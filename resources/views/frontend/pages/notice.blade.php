@@ -44,7 +44,7 @@
                         <tr>
                             <td>{{ $doc->title }}</td>	
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.download',$doc->id) }}">View Document</a>
+                                <a class="btn btn-primary" href="{{ route('admin.download',$doc->file) }}">View Document</a>
                             </td>
                         </tr>
                         @endif 
@@ -59,5 +59,5 @@
     <!-- Gallery End -->
     <div class="your-paginate mt-4">
     {{ $notice->links() }}
-</div>
+    </div>
 @endsection

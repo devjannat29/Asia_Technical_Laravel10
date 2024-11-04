@@ -44,7 +44,7 @@
                         <tr>
                             <td>{{ $doc->title }}</td>	
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.download_interview',$doc->id) }}">View Document</a>
+                                <a class="btn btn-primary" href="{{ route('admin.download',$doc->file) }}">View Document</a>
                             </td>
                         </tr>
                         @endif 

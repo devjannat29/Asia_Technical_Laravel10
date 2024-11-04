@@ -21,7 +21,7 @@
         @else
           <p>Nothing available</p>
         @endif
-        <a href="" class="btn btn-primary mt-2 py-2 px-4">About More</a>
+        <a href="{{ route('home.about_us') }}" class="btn btn-primary mt-2 py-2 px-4">About More</a>
       </div>
     </div>
   </div>

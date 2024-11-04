@@ -124,7 +124,8 @@ class ServiceController extends Controller
         ]);
         $file = $request->file('document');
         $fileName = time().'_'.$file->getClientOriginalName();
-        $file->storeAs('documents',$fileName,'public');
+        $file->move(public_path('upload/document'), $fileName);
+        
 
         $doc = new Notice;
         $doc->file =$fileName;
@@ -139,27 +140,14 @@ class ServiceController extends Controller
         return redirect()->back()->with($notification);
         
     }
-
-    public function download($id){
-        $document = Notice::find($id);
-
-        if (!$document) {
-            abort(404); // Handle case where document is not found
-        }
-
-        $file_path=storage_path("app/public/documents/{$document->file}");
-
-    return response()->download($file_path, $document->title);
-        
+    //download document
+    public function download(Request $request,$file){
+        return response()->download(public_path('upload/document/'.$file));
     }
+
 
     public function delete_notice($id){
         $data=Notice::findOrFail($id);
-
-        $file_path=public_path('notice_pdf/'.$data->file);
-        if(file_exists($file_path)){
-            unlink($file_path);
-        }
 
         $data->delete();
 
@@ -171,7 +159,7 @@ class ServiceController extends Controller
         return redirect()-> back()->with($notification);
     }
 
-    ///Notice
+    ///Interview
     public function interview(){
         $data=Interview::orderBy('id','DESC')->paginate(10);
         return view('admin.partials.service.interview',compact('data'));
@@ -183,7 +171,7 @@ class ServiceController extends Controller
         ]);
         $file = $request->file('document');
         $fileName = time().'_'.$file->getClientOriginalName();
-        $file->storeAs('documents',$fileName,'public');
+        $file->move(public_path('upload/document'), $fileName);
 
         $doc = new Interview;
         $doc->file =$fileName;
@@ -199,26 +187,10 @@ class ServiceController extends Controller
         
     }
 
-    public function download_interview($id){
-        $document = Interview::find($id);
-
-        if (!$document) {
-            abort(404); // Handle case where document is not found
-        }
-
-        $file_path=storage_path("app/public/documents/{$document->file}");
-
-    return response()->download($file_path, $document->title);
-        
-    }
 
     public function delete_interview($id){
         $data=Interview::findOrFail($id);
 
-        $file_path=public_path('interview_pdf/'.$data->file);
-        if(file_exists($file_path)){
-            unlink($file_path);
-        }
 
         $data->delete();
 
@@ -276,7 +248,7 @@ class ServiceController extends Controller
         ]);
         $file = $request->file('document');
         $fileName = time().'_'.$file->getClientOriginalName();
-        $file->storeAs('jobdocument',$fileName,'public');
+        $file->move(public_path('upload/document'), $fileName);
 
         $doc = new Job_Circular;
         $doc->file =$fileName;
@@ -293,26 +265,10 @@ class ServiceController extends Controller
         
     }
 
-    public function download_job_circular($id){
-        $document = Job_Circular::find($id);
-
-        if (!$document) {
-            abort(404); // Handle case where document is not found
-        }
-
-        $file_path=storage_path("app/public/jobdocument/{$document->file}");
-
-        return response()->download($file_path, $document->job_title);
-        
-    }
 
     public function delete_job_circular($id){
         $data=Job_Circular::findOrFail($id);
 
-        $file_path=public_path('job_pdf/'.$data->file);
-        if(file_exists($file_path)){
-            unlink($file_path);
-        }
 
         $data->delete();
 

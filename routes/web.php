@@ -123,7 +123,7 @@ Route::middleware(['auth','role:admin'])->group(function(){
     //Notice
     Route::get('/admin/notice', [ServiceController::class, 'notice'])->name('admin.notice');
     Route::post('/admin/upload_notice', [ServiceController::class, 'upload_notice'])->name('admin.upload_notice');
-    Route::get('/admin/download/{id}',[ServiceController::class, 'download'])->name('admin.download');
+    Route::get('/admin/download/{file}',[ServiceController::class, 'download'])->name('admin.download');
     Route::get('/admin/delete_notice/{id}', [ServiceController::class, 'delete_notice'])-> name('admin.delete_notice');
 
     //interview

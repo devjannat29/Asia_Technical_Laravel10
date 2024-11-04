@@ -64,7 +64,7 @@
                             <td>{{ $jobItem->category }}</td>	
                             <td>{{ $jobItem->job_title }}</td>	
                             <td>
-                                <a class="btn btn-primary" href="{{ route('admin.download_job_circular',$jobItem->id) }}">View Document</a>
+                                <a class="btn btn-primary" href="{{ route('admin.download',$jobItem->file) }}">View Document</a>
                             </td>
                         </tr>
 

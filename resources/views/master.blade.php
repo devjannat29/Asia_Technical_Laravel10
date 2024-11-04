@@ -3,7 +3,7 @@
 
     @include('frontend.partials.head')
 
-  <body class="m-0 p-0">
+  <body>
 
     <!-- Navbar Start -->
     @include('frontend.partials.navbar')

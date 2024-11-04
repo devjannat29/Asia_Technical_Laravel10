@@ -47,7 +47,6 @@
                       <thead>
                         <tr>
                             <th width="100">Interview Title</th>
-                            <th width="100">View Document</th>
                             <th width="100">Download Document</th>
                             <th width="100">Delete</th>
                         </tr>
@@ -56,8 +55,7 @@
                       @foreach ($data as $doc)
                         <tr>
                             <td>{{ $doc->title }}</td>										
-                            <td><a href="{{ route('admin.download_interview',$doc->id) }}"><i style="color: green" data-feather="eye"></i></a></td>
-                            <td><a href="{{ route('admin.download_interview',$doc->id) }}"><i style="color: green" data-feather="download"></i></a></td>
+                            <td><a href="{{ route('admin.download',$doc->file) }}"><i style="color: green" data-feather="download"></i></a></td>
                             <td><a href="{{ route('admin.delete_interview',$doc->id) }}" onclick="showSwal('passing-parameter-execute-cancel')"> <i style="color: red" data-feather="x-circle"></i></a></td>
                         </tr>
                         @endforeach

@@ -28,7 +28,7 @@
 
         <div class="row portfolio-container">
           @foreach ($gallery as $img)
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
+          <div class="col-lg-4 col-md-4 col-4 mb-4 portfolio-item first">
             <div class="position-relative overflow-hidden mb-2">
               <img class="img-fluid w-100" src="{{ asset('public/galleryimage/' . $img->image) }}" alt="" />
               <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
@@ -44,7 +44,7 @@
                 {{ $gallery->links() }}
             </div>
       </div>
-    </div>
+  </div>
     <!-- Gallery End -->
 
 @endsection

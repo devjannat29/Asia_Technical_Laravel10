@@ -34,6 +34,7 @@
                 @endif
             <p>{!! $data->description !!}</p>
           </div>
+          <a href="{{$data->link}}" class="btn btn-secondary px-5">Registration Now</a>
         </div>
         <div class="col-lg-4 mt-5 mt-lg-0">
         @include('frontend.pages.partials.sideCourse')
@@ -41,7 +42,7 @@
         </div>
         
       </div>
-      <a href="{{$data->link}}" class="btn btn-secondary mt-2 py-2 px-5">Registration Now</a>
+      
 </div>
 <!--Single-Product-Section-->
 @endsection

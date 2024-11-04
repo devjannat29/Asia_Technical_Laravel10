@@ -1,4 +1,4 @@
-<div class=" mt-5 mt-lg-0">
+<div class=" mt-5 mt-lg-0 px-4">
 <div class="item-six">
     <div class="free-consultation">
         <div class="sec-title-one pb-one">

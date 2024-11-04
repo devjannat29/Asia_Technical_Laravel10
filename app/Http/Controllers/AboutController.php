@@ -99,7 +99,7 @@ class AboutController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$takeimage->getClientOriginalExtension();
             $img = $manager->read($takeimage);
-            $img->resize(358, 358);
+            $img->resize(400, 400);
             $img->toJpeg(80)->save(public_path('memberimage/'.$name_gen));
 
             $data->image = $name_gen;
@@ -133,7 +133,7 @@ class AboutController extends Controller
             $manager = new ImageManager(new Driver());
             $name_gen = hexdec(uniqid()).'.'.$takeimage->getClientOriginalExtension();
             $img = $manager->read($takeimage);
-            $img->resize(358, 358);
+            $img->resize(400, 400);
             $img->toJpeg(80)->save(public_path('memberimage/'.$name_gen));
 
             $data->image = $name_gen;

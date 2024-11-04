@@ -52,22 +52,23 @@
         </div>
 
         <div class="row portfolio-container">
-          @foreach ($placement as $img)
-          <div class="col-lg-4 col-md-6 mb-4 portfolio-item first">
-            <div class="position-relative overflow-hidden mb-2">
-              <img class="img-fluid w-100" src="{{ asset('public/placementgallery/' . $img->image) }}" alt="" />
-              <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
+    @foreach ($placement as $img)
+    <div class="col-lg-4 col-md-4 col-4 mb-4 portfolio-item first">
+        <div class="position-relative overflow-hidden mb-2">
+            <img class="img-fluid w-100" src="{{ asset('public/placementgallery/' . $img->image) }}" alt="" />
+            <div class="portfolio-btn bg-primary d-flex align-items-center justify-content-center">
                 <a href="{{ asset('public/placementgallery/' . $img->image) }}" data-lightbox="portfolio">
-                  <i class="fa fa-plus text-white" style="font-size: 60px"></i>
+                    <i class="fa fa-plus text-white" style="font-size: 60px"></i>
                 </a>
-              </div>
             </div>
-          </div>
-          @endforeach   
         </div>
-        <div class="your-paginate mt-4">
-                {{ $placement->links() }}
-            </div>
+    </div>
+    @endforeach   
+</div>
+
+<div class="your-paginate mt-4">
+    {{ $placement->links() }}
+</div>
       </div>
     </div>
     <!-- Gallery End -->
