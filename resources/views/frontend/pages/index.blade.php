@@ -1,29 +1,59 @@
 @extends('master')
 
 @section('content')
+<style>
+    .carousel-caption {
+        top: 20%; /* Default position */
+    }
+    @media (max-width: 768px) {
+        .carousel-caption {
+            bottom: 20%; /* Slightly raise on medium screens */
+        }
+        .carousel-caption h1 {
+            font-size: 1.5rem;
+        }
+        .carousel-caption p {
+            font-size: 0.9rem;
+        }
+    }
+    @media (max-width: 576px) {
+        .carousel-caption {
+            padding-bottom: 1rem; /* Add padding to prevent clipping */
+            text-align: center;
+        }
+        .carousel-caption .image img {
+            width: 40px; /* Smaller logo for extra small screens */
+        }
+        .carousel-caption h1 {
+            font-size: 1rem; /* Smaller heading font */
+        }
+        .carousel-caption p {
+            font-size: 0.4rem; /* Smaller paragraph font */
+        }
+    }
+</style>
 <!-- Carousel Start -->
 <div class="container-fluid p-0 mb-5">
   <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
           <!-- First Slide -->
-          <div class="carousel-item active">
+          <div class="carousel-item active ">
             <div class="image-container">
-              <img class="w-100" src="{{ asset('public/frontsite/img/Campas.jpg') }}" alt="AC Repair Service">
+              <img class="w-100" src="{{ asset('public/frontsite/img/campas.jpg') }}" alt="Attc">
               <div style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: linear-gradient(rgba(35, 38, 49, 0.7), rgba(35, 38, 49, 0.7));"></div>
             </div>
               <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
                   <div class="container">
                       <div class="row justify-content-center">
-                          <div class="col-lg-10 col-md-10 col-sm-10 pt-5 text-center">
+                          <div class="col-lg-12 col-md-12 col-sm-12 text-center">
                             <div class="image">
-                              <img src="{{ asset('public/frontsite/img/logo.png') }}" alt="Logo" class="responsive-img d-none d-sm-inline-block">
+                              <img width="100" src="{{ asset('public/frontsite/img/logo.png') }}" alt="Logo" class="responsive-img">
                             </div>
-                              <h1 class="display-8 text-white mb-4 animated slideInDown">
-                                Asia Technical Training Center (ATTC)  
+                              <h1 class="display-8 text-white animated slideInDown text-center ">
+                                Asia Technical Training Center  
                               </h1>
-                              <p class="fs-5 mb-4 pb-2 mx-sm-5 animated slideInDown d-none d-sm-inline-block">
-                                Registered Training Organization - Bangladesh Technical Education Board (BTEB) <br>
-                                Competency Based Training & Assesment (CBT&A) And Testing Center
+                              <p class="fs-5 pb-2 mx-sm-5 animated slideInDown ">
+                                Registered Training Organization - Bangladesh Technical Education Board (BTEB)
                               </p>
                               <a href="#" class="btn btn-primary explore-btn animated slideInDown d-none d-sm-inline-block px-5">Contact Us</a>
                           </div>
