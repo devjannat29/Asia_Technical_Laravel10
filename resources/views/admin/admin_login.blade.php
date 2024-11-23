@@ -60,29 +60,51 @@
                 </div>
                 <div class="col-md-8 ps-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Laravel<span>Demo</span></a>
+                    <a href="#" class="noble-ui-logo logo-light d-block mb-2">Asia<span>TTC</span></a>
                     <h5 class="text-muted fw-normal mb-4">Welcome back! Log in to your account.</h5>
 
                     <form class="forms-sample" action="{{ route('login') }}" method="POST">
-                        @csrf
+                    @csrf
                       <div class="mb-3">
-                        <label for="login" class="form-label">Email /Phone /Name</label>
-                        <input type="text" class="form-control" name="login" id="login" placeholder="Eamil or Phone or Name">
+                        <label for="login" class="form-label">Email / Phone / Name</label>
+                        <input 
+                          type="text" 
+                          class="form-control @error('login') is-invalid @enderror" 
+                          name="login" 
+                          id="login" 
+                          placeholder="Email, Phone, or Name"
+                          value="{{ old('login') }}"
+                        >
+                        <!-- Display error for 'login' -->
+                        @error('login')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
                       <div class="mb-3">
                         <label for="userPassword" class="form-label">Password</label>
-                        <input type="password" class="form-control" name="password" id="Password" autocomplete="current-password" placeholder="Password">
+                        <input 
+                          type="password" 
+                          class="form-control @error('password') is-invalid @enderror" 
+                          name="password" 
+                          id="userPassword" 
+                          autocomplete="current-password" 
+                          placeholder="Password"
+                        >
+                        <!-- Display error for 'password' -->
+                        @error('password')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                        @enderror
                       </div>
                       <div>
-                        <a href="{{ route('password.request') }}">Forget Password?</a><br>
-                        <button type="submit" class="btn btn-outline-primary btn-icon-text mt-2 mb-2 px-5 mb-md-0">
-                          Login
-                        </button>
+                      <a href="{{ route('password.request') }}">Forget Password?</a><br>
+                      <button type="submit" class="btn btn-outline-primary btn-icon-text mt-2 mb-2 px-5 mb-md-0">
+                        Login
+                      </button>
                       </div>
                     </form>
-
                   </div>
                 </div>
+
               </div>
 						</div>
 					</div>

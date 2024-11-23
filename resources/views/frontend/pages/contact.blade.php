@@ -2,7 +2,7 @@
 
 @section('content')
     <!-- Header Start -->
-    <div class="container-fluid bg-primary mb-5">
+    <div class="container-fluid bg-secondary mb-5">
       <div
         class="d-flex flex-column align-items-center justify-content-center"
         style="min-height: 400px"

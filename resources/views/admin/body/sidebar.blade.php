@@ -19,6 +19,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a href="{{ route('admin.view_certificate') }}" class="nav-link">
+            <i class="link-icon" data-feather="user"></i>
+            <span class="link-title">Certificate</span>
+          </a>
+        </li>
+        <li class="nav-item">
           <a href="{{ route('admin.view_about') }}" class="nav-link">
             <i class="link-icon" data-feather="user"></i>
             <span class="link-title">About</span>

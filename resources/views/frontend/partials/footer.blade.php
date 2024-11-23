@@ -110,7 +110,7 @@
         class="container-fluid pt-5"
         style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
         <p class="m-0 text-center text-white">
-          &copy; All Rights Reserved. Designed & Devoloped by
+          &copy; All Rights Reserved Asia Technical Traning Center. Designed & Devoloped by
           <a class="text-primary font-weight-bold" href="https://www.linkedin.com/in/nurjannat29/">Nur Jannat</a>
         </p>
       </div>

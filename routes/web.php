@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AgentController;
 use App\Http\Controllers\backend\PropertyTypeController;
+use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PhotoGalleryController;
@@ -75,6 +76,17 @@ Route::middleware(['auth','role:admin'])->group(function(){
     //About
     Route::get('/admin/view_about', [AboutController::class, 'view_about'])->name('admin.view_about');
     Route::post('/admin/view_about', [AboutController::class, 'saveAbout'])->name('admin.saveAbout');
+
+    //certificate 
+    Route::get('/admin/view_certificate', [CertificateController::class, 'view_certificate'])->name('admin.view_certificate');
+    Route::get('/admin/add_certificate', [CertificateController::class, 'add_certificate'])->name('admin.add_certificate');
+    Route::post('/admin/upload_certificate', [CertificateController::class, 'upload_certificate'])->name('admin.upload_certificate');
+    Route::get('/admin/certificate/{id}', [CertificateController::class, 'certificate'])->name('admin.certificate');
+    Route::get('/admin/edit_certificate/{id}', [CertificateController::class, 'edit_certificate'])->name('admin.edit_certificate');
+    Route::post('/admin/update_certificate/{id}', [CertificateController::class, 'update_certificate'])->name('admin.update_certificate');
+    Route::get('/admin/delete_certificate/{id}', [CertificateController::class, 'delete_certificate'])->name('admin.delete_certificate');
+
+    Route::get('/print_certificate/{id}', [CertificateController::class, 'print_certificate'])-> name('print_certificate');
 
      //setting
      Route::get('/admin/setting', [SettingController::class, 'setting'])->name('admin.setting');
