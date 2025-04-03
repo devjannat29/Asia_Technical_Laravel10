@@ -221,7 +221,7 @@ class AboutController extends Controller
         $data->save();
 
         $notification = array(
-            'message' => 'Member Information Updated Successfully',
+            'message' => 'Event Updated Successfully',
             'alert-type' => 'success'
         );
 

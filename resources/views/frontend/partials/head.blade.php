@@ -29,6 +29,7 @@
     <link href="{{ asset('public/frontsite/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet" />
     <link href="{{ asset('public/frontsite/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet" />
 
+
     <!-- Customized Bootstrap Stylesheet -->
     <link href="{{ asset('public/frontsite/css/style.css') }}" rel="stylesheet" />
   </head>

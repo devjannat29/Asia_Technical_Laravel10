@@ -1,4 +1,3 @@
-
 <div class="container-fluid pt-5">
       <div class="container">
         <div class="text-center pb-2">
@@ -10,7 +9,7 @@
         <div class="row">
           @foreach ($manegment as $team)
           @if ($team->add_menegment != '0')
-          <div class="col-md-6 col-lg-3 col-sm-2 text-center team mb-5">
+          <div class="col-md-6 col-lg-3 col-sm-6  text-center team mb-5">
             <div class="position-relative overflow-hidden mb-4" style="border-radius: 100%">
               @if ($team->image != '')
                 <img class="img-fluid w-100" src="public/memberimage/{{$team->image}}" alt="">

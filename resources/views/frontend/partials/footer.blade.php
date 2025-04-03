@@ -74,22 +74,22 @@
         <div class="col-lg-2 col-md-6 col-sm-6 mb-5">
           <h3 class="text-primary mb-4">Quick Links</h3>
           <div class="d-flex flex-column justify-content-start">
-            <a class="text-white mb-2" href="#"
+            <a class="text-white mb-2" href="{{ route('home.index') }}"
               ><i class="fa fa-angle-right mr-2"></i>Home</a
             >
-            <a class="text-white mb-2" href="#"
+            <a class="text-white mb-2" href="{{ route('home.about_us') }}"
               ><i class="fa fa-angle-right mr-2"></i>About Us</a
             >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Classes</a
+            <a class="text-white mb-2" href="{{ route('home.all_course')}}"
+              ><i class="fa fa-angle-right mr-2"></i>Our Couress</a
             >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Teachers</a
+            <a class="text-white mb-2" href="{{ route('home.interview') }}"
+              ><i class="fa fa-angle-right mr-2"></i>Up Coming Interviews</a
             >
-            <a class="text-white mb-2" href="#"
-              ><i class="fa fa-angle-right mr-2"></i>Our Blog</a
+            <a class="text-white mb-2" href="{{ route('home.event') }}"
+              ><i class="fa fa-angle-right mr-2"></i>Our Events</a
             >
-            <a class="text-white" href="#"
+            <a class="text-white" href="{{ route('home.contact') }}"
               ><i class="fa fa-angle-right mr-2"></i>Contact Us</a
             >
           </div>
@@ -110,7 +110,7 @@
         class="container-fluid pt-5"
         style="border-top: 1px solid rgba(23, 162, 184, 0.2) ;">
         <p class="m-0 text-center text-white">
-          &copy; All Rights Reserved Asia Technical Traning Center. Designed & Devoloped by
+          &copy; All Rights Reserved <a href="">Asia Technical Traning Center</a>. Designed & Devoloped by
           <a class="text-primary font-weight-bold" href="https://www.linkedin.com/in/nurjannat29/">Nur Jannat</a>
         </p>
       </div>

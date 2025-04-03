@@ -30,7 +30,7 @@
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
               @if ($events->image != '')
-                <img class="card-img-top mb-2" src="{{ asset('public/eventimage/' . $events->image) }}" alt="">
+                <img class="card-img-top mb-2" src="{{ asset('public/eventimage/'.$events->image) }}" alt="">
               @endif
               <div class="card-body bg-light text-center p-4">
                 <h4 class="">{{ $events->title }}</h4>

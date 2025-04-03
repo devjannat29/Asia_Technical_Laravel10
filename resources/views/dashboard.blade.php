@@ -1,17 +1,28 @@
-<x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
+<!DOCTYPE html>
+<html lang="en">
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
-                </div>
-            </div>
-        </div>
-    </div>
-</x-app-layout>
+    @include('frontend.partials.head')
+
+  <body>
+
+    <!-- Navbar Start -->
+    @include('frontend.partials.navbar')
+    <!-- Navbar End -->
+    
+
+    @yield('content')
+
+
+
+    <!-- Footer Start -->
+    @include('frontend.partials.footer')
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary p-3 back-to-top"
+      ><i class="fa fa-angle-double-up"></i
+    ></a>
+
+    @include('frontend.partials.scripts')
+  </body>
+</html>

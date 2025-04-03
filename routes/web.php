@@ -43,16 +43,14 @@ Route::get('/all_course',[HomeController::class,'all_course'])->name('home.all_c
 Route::get('/contact',[HomeController::class,'contact'])->name('home.contact');
 Route::get('/about_us',[HomeController::class,'about_us'])->name('home.about_us');
 
-
+Route::get('/admin/download/{file}',[ServiceController::class, 'download'])->name('admin.download');
 
 // admin login route
 Route::get('/admin/login',[AdminController::class,'AdminLogin'])->name('admin.login');
 
 
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard',[HomeController::class,'index'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -65,7 +63,6 @@ require __DIR__.'/auth.php';
 // admin group middleware
 Route::middleware(['auth','role:admin'])->group(function(){
 
-
     Route::get('/admin/dashboard',[AdminController::class,'AdminDashboard'])->name('admin.dashboard');
     Route::get('/admin/logout',[AdminController::class,'AdminLogout'])->name('admin.logout');
     Route::get('/admin/profile',[AdminController::class,'AdminProfile'])->name('admin.profile');
@@ -76,17 +73,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     //About
     Route::get('/admin/view_about', [AboutController::class, 'view_about'])->name('admin.view_about');
     Route::post('/admin/view_about', [AboutController::class, 'saveAbout'])->name('admin.saveAbout');
-
-    //certificate 
-    Route::get('/admin/view_certificate', [CertificateController::class, 'view_certificate'])->name('admin.view_certificate');
-    Route::get('/admin/add_certificate', [CertificateController::class, 'add_certificate'])->name('admin.add_certificate');
-    Route::post('/admin/upload_certificate', [CertificateController::class, 'upload_certificate'])->name('admin.upload_certificate');
-    Route::get('/admin/certificate/{id}', [CertificateController::class, 'certificate'])->name('admin.certificate');
-    Route::get('/admin/edit_certificate/{id}', [CertificateController::class, 'edit_certificate'])->name('admin.edit_certificate');
-    Route::post('/admin/update_certificate/{id}', [CertificateController::class, 'update_certificate'])->name('admin.update_certificate');
-    Route::get('/admin/delete_certificate/{id}', [CertificateController::class, 'delete_certificate'])->name('admin.delete_certificate');
-
-    Route::get('/print_certificate/{id}', [CertificateController::class, 'print_certificate'])-> name('print_certificate');
 
      //setting
      Route::get('/admin/setting', [SettingController::class, 'setting'])->name('admin.setting');
@@ -135,7 +121,6 @@ Route::middleware(['auth','role:admin'])->group(function(){
     //Notice
     Route::get('/admin/notice', [ServiceController::class, 'notice'])->name('admin.notice');
     Route::post('/admin/upload_notice', [ServiceController::class, 'upload_notice'])->name('admin.upload_notice');
-    Route::get('/admin/download/{file}',[ServiceController::class, 'download'])->name('admin.download');
     Route::get('/admin/delete_notice/{id}', [ServiceController::class, 'delete_notice'])-> name('admin.delete_notice');
 
     //interview
@@ -183,5 +168,3 @@ Route::middleware(['auth','role:admin'])->group(function(){
 /* Route::middleware(['auth','role:agent'])->group(function(){
     Route::get('/agent/dashboard',[AgentController::class,'AgentDashboard'])->name('agent.dashboard');
 }); */ // end group agent middleware
-
-

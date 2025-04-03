@@ -1,3 +1,4 @@
+
 <div class="container-fluid pt-5">
       <div class="container">
         <div class="text-center pb-2">
@@ -10,12 +11,11 @@
           @foreach ($event as $events)
           <div class="col-lg-4 mb-4">
             <div class="card border-0 shadow-sm mb-2">
-              @if ($events->image != '')
-                <img class="card-img-top mb-2" src="public/eventimage/{{$events->image}}" alt="">
-              @endif
+                <img class="card-img-top mb-2" src="{{ asset('public/eventimage/'.$events->image) }}" alt="">
               <div class="card-body bg-light text-center p-4">
                 <h4 class="">{{ $events->title }}</h4>
-                <a href="{{route('home.event_details', $events->id)}}" class="btn btn-primary px-5 mx-auto my-2">Read More</a>
+
+                <a href="{{route('home.event_details', $events->id)}}" class="btn btn-primary px-4 mx-auto my-2">Read More</a>
               </div>
             </div>
           </div>

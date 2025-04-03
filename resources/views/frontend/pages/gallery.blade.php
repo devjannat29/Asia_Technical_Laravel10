@@ -41,8 +41,8 @@
           @endforeach   
         </div>
         <div class="your-paginate mt-4">
-                {{ $gallery->links() }}
-            </div>
+          {{ $gallery->links() }}
+        </div>
       </div>
   </div>
     <!-- Gallery End -->
